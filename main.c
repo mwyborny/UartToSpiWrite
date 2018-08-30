@@ -36,8 +36,6 @@ int main(void)
     
     addr = 0;
     
-   
-
     
     while(!( U1STAbits.URXDA == 1) )
       {
