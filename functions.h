@@ -79,13 +79,3 @@ uint8_t readByte(uint16_t addr, uint8_t data)
     return recieve;
 }
  
-void clearTMR1(void)
-{
-    TMR1_Stop();
-    TMR1 = 0;
-    TMR1_Start();
-    
-    
-    
-    
-}

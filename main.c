@@ -4,7 +4,7 @@
 #include "newxc16_header.h"
 #include "functions.h"
 
-extern tmr1_obj;
+//extern tmr1_obj;
 
 bool IFlag = 0;
 
@@ -54,10 +54,11 @@ int main(void)
             }
          if(IFlag == 1)
             {
-                 IFlag = 0;
-                if(UData[0] == NAK)
+                IFlag = 0;
+                if(UData[0] == EOT)
                     {
                         printf("ACK");
+                         goto done;
                  
                         if(ETB == UART1_Read() )
                             {
@@ -65,6 +66,10 @@ int main(void)
                                 goto done;
                             }
                     }
+                else
+                        {
+                            printf("%c", NAK);
+                        }
             }
              
          TMR1_Stop();
@@ -86,22 +91,21 @@ int main(void)
      
 done:
  TMR1_Stop();
-    for(i16 = 0; i16 < 132; i16++)
-        {
-        printf("%x ", UData[i16]);
-        }
-   }
-           
+   
+
+addr = 0;
+putImage(1)
+{
+     n = readByte(0x0000, data);
     
     
-    Nop();
-    for(i16=0;i16<200;i16++)
-        {
-            n = readByte(i16, 0);
-            printf("%x ", n);
-            delay_ms(100);
     
-        }   
+}}
+
+
+
+
+
     
  
 };

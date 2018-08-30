@@ -34,6 +34,8 @@ uint8_t readStat();
 
 
 void clearTMR1();
+void putImage(uint8_t);
+
 
 
 
