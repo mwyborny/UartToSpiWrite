@@ -83,8 +83,7 @@ int main(void)
          TMR1_Start();
      
          printf("%c",ACK);
-       
-    
+        
     }
     
     
