@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/uartToSpiEEPROMWrite.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=uartToSpiEEPROMWrite.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=uarttospieepromwrite/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/UartToSpiWrite.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=UartToSpiWrite.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=uarttospiwrite/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/uarttospieepromwrite/bin
+makeDirectory ${TMPDIR}/uarttospiwrite/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/uarttospieepromwrite.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/uarttospiwrite.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/uarttospieepromwrite.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/uarttospiwrite.tar *
 checkReturnCode
 
 # Cleanup

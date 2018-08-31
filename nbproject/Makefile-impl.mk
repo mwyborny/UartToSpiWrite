@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=uartToSpiEEPROMWrite
+PROJECTNAME=UartToSpiWrite
 
 # Active Configuration
 DEFAULTCONF=default

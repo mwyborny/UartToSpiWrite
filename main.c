@@ -49,15 +49,16 @@ int main(void)
              {
                 UData[i16] = UART1_Read();
             }
-         if(IFlag == 1)
+            if(IFlag == 1)
             {
                 IFlag = 0;
                 if(UData[0] == EOT)
                     {
                         printf("ACK");
                          goto done;
+                         UData[1] == UART1_Read();
                  
-                        if(ETB == UART1_Read() )
+                        if(UData[1] == ETB )
                             {
                                 printf("ACK");
                                 goto done;
@@ -71,6 +72,11 @@ int main(void)
              
          TMR1_Stop();
         
+         if(addr >= 20000)
+         {
+             goto done;
+         }
+         
          for(n = 3;n<128+3;n++)
              {
                 writeByte(addr++, UData[n]);
@@ -83,20 +89,15 @@ int main(void)
         
     }
     
-    
+   }
      
 done:
  TMR1_Stop();
    
 
 addr = 0;
-putImage(1)
-{
-     n = readByte(0x0000, data);
-    
-    
-    
-}}
+
+
 
 
 
@@ -104,4 +105,4 @@ putImage(1)
 
     
  
-};
+}
